@@ -2,68 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
+.lpb-btn {
+    @apply bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded;
+}
 
-.bbn {
-    --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+.lbp-submit-btn {
+    @apply inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-200 border border-transparent rounded-md font-semibold text-xs text-white dark:text-gray-800 uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-white focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150;
 }
-.bah {
-    --tw-text-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-text-opacity));
+
+.lpb-edit-btn {
+    @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded;
 }
-.awg {
-    font-weight: 600;
+
+.lpb-delete-btn {
+    @apply bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded;
 }
-.awa {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
+
+.lbp-input {
+    @apply border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm;
 }
-.arv {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+
+.lbp-update-btn {
+    @apply inline-flex items-center px-4 py-2 text-xs uppercase tracking-widest border-2 rounded-md font-semibold bg-blue-600 dark:bg-gray-200 hover:bg-blue-500 dark:hover:bg-white text-white dark:text-gray-800;
 }
-.arf {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+
+.lbp-delete-button {
+    @apply px-3 py-2 rounded-md bg-red-600 hover:bg-red-500 text-white;
 }
-.ajp {
-    --tw-bg-opacity: 1;
-    background-color: rgb(99 102 241 / var(--tw-bg-opacity));
+
+.lbp-label {
+    /* @apply uppercase block mb-2 text-xs font-bold text-gray-700; */
+    @apply block font-medium text-sm text-gray-700 dark:text-gray-300;
 }
-.adu {
-    border-radius: 0.375rem;
-}
-.zy {
-    -moz-column-gap: 0.375rem;
-    column-gap: 0.375rem;
-}
-.yz {
-    align-items: center;
-}
-.ly {
-    display: inline-flex;
-}
-.ab {
-    position: relative;
-}
-button, [type="button"], [type="reset"], [type="submit"] {
-    -webkit-appearance: button;
-    background-color: transparent;
-    background-image: none;
-}
-button, [role="button"] {
-    cursor: pointer;
-}
-button, select {
-    text-transform: none;
-}
-button, input, optgroup, select, textarea {
-    font-family: inherit;
-    font-size: 100%;
-    font-weight: inherit;
-    line-height: inherit;
-    color: inherit;
-    margin: 0;
-    padding: 0;
+
+.lbp-input {
+    /* @apply block w-full border border-gray-200 px-4 py-3 leading-tight text-gray-700 rounded appearance-none; */
+    @apply border-2 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm mt-1 block w-full;
 }
