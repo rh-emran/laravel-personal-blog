@@ -12,7 +12,9 @@ class TagController extends Controller
      */
     public function index()
     {
-        //
+        return view('tag.index', [
+            'tags' => Tag::orderby('id', 'desc')->paginate(10),
+        ]);
     }
 
     /**
@@ -20,7 +22,7 @@ class TagController extends Controller
      */
     public function create()
     {
-        //
+        return view('tag.create');
     }
 
     /**
@@ -28,7 +30,16 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|unique:tags|max:255',
+        ]);
+
+        Tag::create([
+            'name' => $request->name,
+        ]);
+
+        flash()->addSuccess('Tag added successfully.');
+        return redirect()->back();
     }
 
     /**
@@ -44,7 +55,9 @@ class TagController extends Controller
      */
     public function edit(Tag $tag)
     {
-        //
+        return view('tag.edit', [
+            'tag' => $tag,
+        ]);
     }
 
     /**
@@ -52,7 +65,16 @@ class TagController extends Controller
      */
     public function update(Request $request, Tag $tag)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:255|unique:tags,name,'.$tag->id,
+        ]);
+
+        $tag->update([
+            'name' => $request->name,
+        ]);
+
+        flash()->addSuccess('Tag updated successfully.');
+        return redirect()->back();
     }
 
     /**
@@ -60,6 +82,17 @@ class TagController extends Controller
      */
     public function destroy(Tag $tag)
     {
-        //
+        // Get all articles that have this tag
+        $articles = $tag->articles;
+
+        // Detach the tag from all articles
+        foreach ($articles as $article) {
+            $article->tags()->detach($tag->id);
+        }
+
+        // Delete the tag
+        $tag->delete();
+        flash()->addSuccess('Tag deleted successfully.');
+        return redirect()->route('tag.index');
     }
 }

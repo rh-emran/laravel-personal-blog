@@ -2,9 +2,9 @@
     <section class="bg-white dark:bg-gray-900">
         @if(!empty($articles))
             @foreach($articles as $article)
-                <div class="flex justify-between max-w-screen-xl px-4 py-8 mx-auto lg:gap-12 xl:gap-12 lg:py-12 border-b">
+                <div class="flex justify-between max-w-screen-xl px-4 py-8 mx-auto lg:gap-12 xl:gap-12 lg:py-12 border-b border-dashed">
                     <div class="w-full lg:w-1/2 {{ $loop->even ? 'order-2' : ''  }}">
-                        <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
+                        <h1 class="max-w-2xl mb-4 text-3xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
                             {{ $article->title }}</h1>
                         <p class="max-w-2xl mb-4 font-light text-gray-500 lg:mb-4 md:text-lg lg:text-xl dark:text-gray-400">{{ \Illuminate\Support\Str::limit($article->full_text, 150, $end='...') }}</p>
                         <p class="max-w-2xl mb-2 font-light text-gray-400 lg:mb-2 md:text-sm lg:text-sm dark:text-gray-500">Posted by: {{ $article->author->name }}</p>
@@ -23,7 +23,7 @@
                         </a>
                     </div>
                     <div class="hidden w-1/2 lg:mt-0 lg:flex {{ $loop->even ? 'order-1' : ''  }}">
-                        <img src="{{ !empty($article->image) ? asset($article->image) : asset('img/placeholder.png') }}" alt="image">
+                        <img class="w-full" src="{{ !empty($article->image) ? asset($article->image) : asset('img/placeholder.png') }}" alt="image">
                     </div>
                 </div>
             @endforeach

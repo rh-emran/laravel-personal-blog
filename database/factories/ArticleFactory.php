@@ -23,7 +23,7 @@ class ArticleFactory extends Factory
             'full_text' => fake()->paragraph(50, true),
             'category_id' => Category::all()->random()->id,
             'author_id' => User::all()->random()->id,
-//            'image' => fake()->imageUrl(300, 300),
+            // 'image' => fake()->imageUrl(300, 300),
             'image' => null,
         ];
     }

@@ -39,3 +39,44 @@
     /* @apply block w-full border border-gray-200 px-4 py-3 leading-tight text-gray-700 rounded appearance-none; */
     @apply border-2 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm mt-1 block w-full;
 }
+
+
+.ts-wrapper {
+    @apply w-full !ml-0;
+}
+
+.ts-control {
+    @apply shadow-sm  rounded-lg border-gray-300 bg-white dark:bg-gray-900 py-2 px-3 text-base;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+}
+
+.ts-control input {
+    @apply text-gray-700 dark:text-gray-100;
+}
+
+.ts-dropdown {
+    @apply rounded-md border border-solid border-t border-gray-300 text-base dark:bg-gray-900 dark:text-gray-100;
+}
+
+/*.ts-dropdown-content div.option:hover {
+    @apply bg-blue-600 text-gray-100;
+}*/
+
+.ts-dropdown [data-selectable].option:first-child {
+    @apply rounded-t-lg;
+}
+
+.ts-dropdown [data-selectable].option:last-child {
+    @apply rounded-b-lg;
+}
+
+.ts-dropdown .create:hover, .ts-dropdown .option:hover{
+    @apply bg-sky-50 text-sky-900;
+}
+
+.ts-dropdown .active {
+    @apply bg-gray-100 text-gray-900;
+}

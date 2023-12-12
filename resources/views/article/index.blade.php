@@ -39,7 +39,7 @@
                                 <td class="border px-4 py-2">
                                     @if(!empty($article->image))
                                     <img class="w-full m-auto"
-                                         src="{{ $article->image }}" alt="image">
+                                         src="{{ asset($article->image) }}" alt="image">
                                     @else
                                         <p class="w-full text-center">No image</p>
                                     @endif
