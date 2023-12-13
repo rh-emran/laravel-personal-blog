@@ -14,7 +14,7 @@ class CategoryController extends Controller
     public function index()
     {
         return view('category.index', [
-            'categories' => Category::orderby('id', 'desc')->paginate(10),
+            'categories' => Category::with('articles')->orderby('id', 'desc')->paginate(10),
         ]);
     }
 
@@ -84,7 +84,7 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         // Retrieve the articles with their associated tags
-        $articles = $category->articles()->with('tags')->get();
+        $articles = $category->articles()->get();
 
         // Delete the tags associated with each article
         foreach ($articles as $article) {

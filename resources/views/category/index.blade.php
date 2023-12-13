@@ -22,7 +22,7 @@
                         @foreach ($categories as $category)
                             <tr>
                                 <td class="border px-4 py-2 text-center">{{ $category->id }}</td>
-                                <td class="border px-4 py-2">{{ $category->name }}</td>
+                                <td class="border px-4 py-2">{{ $category->name }} ({{ $category->articles->count() }})</td>
                                 <td class="border px-4 py-2 text-center">
                                     <div class="flex items-center justify-center">
                                         <a class="lpb-edit-btn mr-2" href="{{ route('category.edit',$category->id) }}">

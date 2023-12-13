@@ -22,7 +22,7 @@
                         @foreach ($tags as $tag)
                             <tr>
                                 <td class="border px-4 py-2 text-center">{{ $tag->id }}</td>
-                                <td class="border px-4 py-2">{{ $tag->name }}</td>
+                                <td class="border px-4 py-2">{{ $tag->name }} ({{ $tag->articles->count() }})</td>
                                 <td class="border px-4 py-2 text-center">
                                     <div class="flex items-center justify-center">
                                         <a class="lpb-edit-btn mr-2" href="{{ route('tag.edit',$tag->id) }}">
